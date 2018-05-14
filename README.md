@@ -1,5 +1,7 @@
 # mns
 ## To install dependencies
+(whole [scipy stack](https://www.scipy.org/install.html)  will be installed)
+
 ```$: pip install -r requirements.txt```
 
 ## Running
