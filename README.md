@@ -1,6 +1,6 @@
 # mns
 ## To install dependencies
-(whole [scipy stack](https://www.scipy.org/install.html)  will be installed)
+(whole [scipy stack](https://www.scipy.org/install.html) and [jupyter](http://jupyter.org/)  will be installed)
 
 ```$: pip install -r requirements.txt```
 
