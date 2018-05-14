@@ -16,10 +16,6 @@ def derivative(y, x, w, i):
     return ret
 
 
-def logistic_loss(x, y, w):
-    return np.sum(np.log(1 + np.exp(-y * np.dot(x, w))))
-
-
 class GradDescenter:
 
     def __init__(self, x, y, w, dimx):
@@ -52,9 +48,6 @@ class GradDescenter:
             err = self.step(n)
             n = n + 1
         return n
-
-    def validate(self, x, y):
-        return logistic_loss(x, y, self.w)
 
 
 class LdaClassifier:
@@ -113,11 +106,6 @@ class LdaClassifier:
         self._m2 = np.transpose(np.matrix(m2))
 
         return self._m1, self._m2
-
-    def validate(self, x, y):
-        w = np.concatenate(([np.squeeze(np.asarray(self.c))],
-                            np.squeeze(np.asarray(self.w))), axis=0)
-        return logistic_loss(x, y, w)
 
 
 # In[156]:
@@ -275,8 +263,8 @@ for i in range(0, q):
 
 err_1 = 1/q * err_1
 err_2 = 1/q * err_2
-print(err_1)
-print(err_2)
+print('Error from grad descent: {}'.format(err_1))
+print('Error from LDA: {}'.format(err_2))
 
 
 # In[29]:
